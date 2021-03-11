@@ -1,8 +1,11 @@
+const path = require('path');
+
 module.exports = {
     mode: "development",
     entry: "./src/index.ts",
     output: {
-        path: `${__dirname}/docs`,
+        path: path.resolve(__dirname, `../docs/${path.basename(__dirname)}`),
+        publicPath: `/${path.basename(__dirname)}`,
         filename: "app.js"
     },
     module: {
@@ -15,10 +18,10 @@ module.exports = {
     },
     devServer: {
         open: true,
-        openPage: "index.html",
-        contentBase: `${__dirname}/docs`,
+        openPage: `${path.basename(__dirname)}/index.html`,
+        contentBase: path.resolve(__dirname, `../docs`),
         watchContentBase: true,
-        port: 8080
+        port: 8080,
     },
     resolve: {
         extensions: [".ts", ".js"]

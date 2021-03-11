@@ -1,6 +1,8 @@
 import { Avatar } from './Avatar';
 import { Viewer } from './Viewer';
 
+console.log('hi!!hoge-');
+
 window.addEventListener('DOMContentLoaded', () => {
 
     const viewerElement = document.getElementById('viewer');
@@ -8,7 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const avatar = new Avatar(viewer.scene);
 
     //デフォルトモデル読み込み
-    avatar.loadVRM('./three-vrm-girl.vrm');
+    avatar.loadVRM('../three-vrm-girl.vrm');
+
 
     // ローカルのVRMの読み込み
     const inputVRM = document.getElementById('inputVRM');
