@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        #ui {
+            position: absolute;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        #viewer {
+            position: absolute;
+            overflow: hidden;
+            z-index: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="app.js"></script>
+</head>
+
+<body>
+
+    <div id='ui'>
+        <input type='file' accept='.vrm' id='inputVRM'>
+    </div>
+    <div id='viewer'></div>
+</body>
+
+</html>

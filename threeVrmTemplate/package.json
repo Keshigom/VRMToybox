@@ -1,0 +1,26 @@
+{
+  "name": "threevrmtemplate",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keshigom/threeVrmTemplate.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@pixiv/three-vrm": "^0.6.2",
+    "three": "^0.125.2"
+  },
+  "devDependencies": {
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.2.2",
+    "webpack": "^5.24.1",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
