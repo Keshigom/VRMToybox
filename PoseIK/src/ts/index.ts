@@ -1,8 +1,6 @@
 import { Avatar } from './Avatar';
 import { Viewer } from './Viewer';
 
-console.log('hi!!hoge-');
-
 window.addEventListener('DOMContentLoaded', () => {
 
     const viewerElement = document.getElementById('viewer');
