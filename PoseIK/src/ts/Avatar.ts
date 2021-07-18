@@ -15,6 +15,10 @@ export class Avatar {
         this._vrm = null;
     }
 
+    public get vrmIK(): VrmIK {
+        return this._vrmIK
+    }
+
     // VRMの読み込み
     public async loadVRM(url: string) {
 
@@ -30,6 +34,7 @@ export class Avatar {
         this._vrm = vrm;
 
         this._vrmIK = new VrmIK(vrm);
+
     }
 
     public update() {
@@ -38,4 +43,5 @@ export class Avatar {
         if (!!this._vrmIK)
             this._vrmIK.solve();
     }
+
 }

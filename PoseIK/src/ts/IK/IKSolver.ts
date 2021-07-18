@@ -38,7 +38,7 @@ export const solve = (ikChain: IKChain, iteration: number) => {
             _joint2EffectorVector.normalize();
 
             // 注目関節 -> 目標位置のベクトル
-            _joint2GoalVector.subVectors(_goalPosition, _joint2EffectorVector);
+            _joint2GoalVector.subVectors(_goalPosition, _jointPosition);
             _joint2GoalVector.applyQuaternion(_jointQuaternionInverse);
             _joint2GoalVector.normalize();
 

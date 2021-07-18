@@ -34,19 +34,19 @@ export const defaultIKConfig: IKConfig = {
             jointConfigs: [
                 {
                     boneName: VRMSchema.HumanoidBoneName.LeftLowerArm,
-                    rotationMin: new Vector3(0, 0, 0),
+                    rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
                     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
                 },
-                // {
-                //     boneName: VRMSchema.HumanoidBoneName.LeftUpperArm,
-                //     rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
-                //     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
-                // },
-                // {
-                //     boneName: VRMSchema.HumanoidBoneName.LeftShoulder,
-                //     rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
-                //     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
-                // }
+                {
+                    boneName: VRMSchema.HumanoidBoneName.LeftUpperArm,
+                    rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
+                    rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
+                },
+                {
+                    boneName: VRMSchema.HumanoidBoneName.LeftShoulder,
+                    rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
+                    rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
+                }
             ],
             effectorBoneName: VRMSchema.HumanoidBoneName.LeftHand
         }

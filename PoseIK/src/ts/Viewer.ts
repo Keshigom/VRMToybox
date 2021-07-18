@@ -47,6 +47,18 @@ export class Viewer {
         return this._scene;
     }
 
+    public get camera(): THREE.Camera {
+        return this._camera;
+    }
+
+    public get canvas(): HTMLCanvasElement {
+        return this._canvas;
+    }
+
+    public get orbitControl(): OrbitControls {
+        return this._controls;
+    }
+
     public update() {
         this._renderer.render(this._scene, this._camera);
     }
