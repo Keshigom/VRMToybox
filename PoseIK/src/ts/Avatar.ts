@@ -30,6 +30,12 @@ export class Avatar {
         this._vrm = vrm;
 
         this._vrmIK = new VrmIK(vrm);
+    }
 
+    public update() {
+        //this._vrm.update(deltaTime);
+
+        if (!!this._vrmIK)
+            this._vrmIK.solve();
     }
 }

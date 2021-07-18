@@ -7,13 +7,14 @@ import { defaultIKConfig } from './DefaultConfig';
 export class VrmIK {
 
     private _chains: Array<IKSolver.IKChain>;
+    private _iteration: number;
 
     constructor(vrm: VRM, ikConfig: IKSolver.IKConfig = defaultIKConfig) {
 
         this._chains = ikConfig.chainConfigs.map((chainConfig) => {
             return this._createIKChain(vrm, chainConfig);
         });
-
+        this._iteration = ikConfig.iteration || 1;
     }
 
     private _createIKChain(vrm: VRM, chainConfig: IKSolver.ChainConfig): IKSolver.IKChain {
@@ -24,6 +25,13 @@ export class VrmIK {
             return this._createJoint(vrm, jointConfig);
         });
 
+        // test Obj
+        const geometry = new THREE.BoxGeometry(0.1, 0.1, 0.1);
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const cube = new THREE.Mesh(geometry, material);
+        goal.add(cube);
+        // 
+        effector.getWorldPosition(goal.position);
         vrm.scene.add(goal);
 
         return {
@@ -45,7 +53,9 @@ export class VrmIK {
 
     // TODO: updateの方が良い？
     public solve() {
-
+        this._chains.forEach(chain => {
+            IKSolver.solve(chain, this._iteration);
+        });
     }
 }
 

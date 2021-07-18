@@ -34,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //フレーム更新
     const update = () => {
         requestAnimationFrame(update);
+        avatar.update();
         viewer.update();
     }
     update();
