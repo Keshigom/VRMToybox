@@ -51,6 +51,7 @@ export class VrmIK {
 
         return {
             bone: vrm.humanoid.getBoneNode(jointConfig.boneName),
+            order: jointConfig.order,
             rotationMin: jointConfig.rotationMin,
             rotationMax: jointConfig.rotationMax,
         }

@@ -45,7 +45,6 @@ export const solve = (ikChain: IKChain, iteration: number) => {
             // cos rad
             let deltaAngle = _joint2GoalVector.dot(_joint2EffectorVector);
 
-            // TODO: 必要か考える
             if (deltaAngle > 1.0) {
                 deltaAngle = 1.0;
             } else if (deltaAngle < -1.0) {
@@ -72,7 +71,7 @@ export const solve = (ikChain: IKChain, iteration: number) => {
 
             // 回転角・軸制限
             joint.bone.rotation.setFromVector3(
-                joint.bone.rotation.toVector3(_vector).max(joint.rotationMin).min(joint.rotationMax)
+                joint.bone.rotation.toVector3(_vector).max(joint.rotationMin).min(joint.rotationMax), joint.order
             );
 
             joint.bone.updateMatrixWorld(true);
@@ -86,7 +85,6 @@ export const solve = (ikChain: IKChain, iteration: number) => {
 
 
 export interface IKChain {
-    // TODO: goalPos: Vector3 とどちらが良いか考える。
     goal: THREE.Object3D;
     effector: THREE.Object3D; // VRM.VRMHumanoid.getBoneNode() で取得することを想定
     joints: Array<Joint>;
@@ -94,8 +92,10 @@ export interface IKChain {
 
 export interface Joint {
     bone: THREE.Object3D;
+    order: 'XYZ' | 'YZX' | 'ZXY' | 'XZY' | 'YXZ' | 'ZYX';
     rotationMin: THREE.Vector3;
     rotationMax: THREE.Vector3;
+
 }
 
 // VRM から IKChainを生成するための情報
@@ -111,6 +111,10 @@ export interface ChainConfig {
 
 export interface JointConfig {
     boneName: VRMSchema.HumanoidBoneName;
+
+    // オイラー角の回転順序
+    order: 'XYZ' | 'YZX' | 'ZXY' | 'XZY' | 'YXZ' | 'ZYX';
+
     // オイラー角による関節角度制限
     rotationMin: THREE.Vector3;    // -pi ~ pi
     rotationMax: THREE.Vector3;    // -pi ~ pi

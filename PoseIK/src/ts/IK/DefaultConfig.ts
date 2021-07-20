@@ -35,21 +35,25 @@ export const defaultIKConfig: IKConfig = {
 
                 {
                     boneName: VRMSchema.HumanoidBoneName.Neck,
-                    rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
-                    rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
+                    order: 'XYZ',
+                    rotationMin: new Vector3(- (45 / 180) * Math.PI, - (45 / 180) * Math.PI, - (45 / 180) * Math.PI),
+                    rotationMax: new Vector3((45 / 180) * Math.PI, (45 / 180) * Math.PI, (45 / 180) * Math.PI)
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.Chest,
+                    order: 'XYZ',
                     rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
                     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.Spine,
+                    order: 'XYZ',
                     rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
                     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.Hips,
+                    order: 'XYZ',
                     rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
                     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
                 },
@@ -61,18 +65,21 @@ export const defaultIKConfig: IKConfig = {
             jointConfigs: [
                 {
                     boneName: VRMSchema.HumanoidBoneName.LeftLowerArm,
+                    order: 'YZX',
                     rotationMin: new Vector3(0, -Math.PI, 0),
-                    rotationMax: new Vector3(Math.PI, 0, Math.PI),
+                    rotationMax: new Vector3(0, -(0.1 / 180) * Math.PI, 0),
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.LeftUpperArm,
-                    rotationMin: new Vector3(-(120 / 180) * Math.PI, 0, 0),
-                    rotationMax: new Vector3((120 / 180) * Math.PI, 0, (45 / 180) * Math.PI),
+                    order: 'ZXY',
+                    rotationMin: new Vector3(-Math.PI / 2, -Math.PI, - Math.PI),
+                    rotationMax: new Vector3(Math.PI / 2, Math.PI, Math.PI),
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.LeftShoulder,
-                    rotationMin: new Vector3(0, 0, -(45 / 180) * Math.PI),
-                    rotationMax: new Vector3(0, 0, 0),
+                    order: 'ZXY',
+                    rotationMin: new Vector3(0, -(45 / 180) * Math.PI, -(45 / 180) * Math.PI),
+                    rotationMax: new Vector3(0, (45 / 180) * Math.PI, 0),
                 }
             ],
             effectorBoneName: VRMSchema.HumanoidBoneName.LeftHand
@@ -82,18 +89,21 @@ export const defaultIKConfig: IKConfig = {
             jointConfigs: [
                 {
                     boneName: VRMSchema.HumanoidBoneName.RightLowerArm,
-                    rotationMin: new Vector3(0, 0, -Math.PI),
-                    rotationMax: new Vector3(Math.PI, Math.PI, 0),
+                    order: 'YZX',
+                    rotationMin: new Vector3(0, (0.1 / 180) * Math.PI, 0),
+                    rotationMax: new Vector3(0, Math.PI, 0),
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.RightUpperArm,
-                    rotationMin: new Vector3(-(120 / 180) * Math.PI, 0, 0),
-                    rotationMax: new Vector3((120 / 180) * Math.PI, 0, (45 / 180) * Math.PI),
+                    order: 'ZXY',
+                    rotationMin: new Vector3(-Math.PI / 2, -Math.PI, -Math.PI),
+                    rotationMax: new Vector3(Math.PI / 2, Math.PI, Math.PI),
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.RightShoulder,
-                    rotationMin: new Vector3(0, 0, 0),
-                    rotationMax: new Vector3(0, 0, (45 / 180) * Math.PI),
+                    order: 'ZXY',
+                    rotationMin: new Vector3(0, -(45 / 180) * Math.PI, 0),
+                    rotationMax: new Vector3(0, (45 / 180) * Math.PI, (45 / 180) * Math.PI),
                 },
             ],
             effectorBoneName: VRMSchema.HumanoidBoneName.RightHand
@@ -103,12 +113,14 @@ export const defaultIKConfig: IKConfig = {
             jointConfigs: [
                 {
                     boneName: VRMSchema.HumanoidBoneName.LeftLowerLeg,
+                    order: 'XYZ',
                     rotationMin: new Vector3(-Math.PI, 0, 0),
                     rotationMax: new Vector3(0, 0, 0),
 
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.LeftUpperLeg,
+                    order: 'XYZ',
                     rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
                     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
                 },
@@ -120,11 +132,13 @@ export const defaultIKConfig: IKConfig = {
             jointConfigs: [
                 {
                     boneName: VRMSchema.HumanoidBoneName.RightLowerLeg,
+                    order: 'XYZ',
                     rotationMin: new Vector3(-Math.PI, 0, 0),
                     rotationMax: new Vector3(0, 0, 0),
                 },
                 {
                     boneName: VRMSchema.HumanoidBoneName.RightUpperLeg,
+                    order: 'XYZ',
                     rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
                     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
                 },
