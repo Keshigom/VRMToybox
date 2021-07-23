@@ -19,6 +19,9 @@ export class Avatar {
         return this._vrmIK
     }
 
+    public get vrm(): VRM {
+        return this._vrm;
+    }
     // VRMの読み込み
     public async loadVRM(url: string) {
 
