@@ -15,6 +15,7 @@ example
                             // V
                 {           // RootBone
                     boneName:  VRMSchema.HumanoidBoneName.Hoge,
+                    order: 'XYZ',   // 回転順序
                     rotationMin: new Vector3(-Math.PI,0,0)    // 最小 回転角制限  -Pi ~ Pi
                     rotationMax: new Vector3(Math.PI,0,0)    // 最大 回転角制限  -Pi ~ Pi
                 }          
