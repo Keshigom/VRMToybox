@@ -35,12 +35,6 @@ export const defaultIKConfig: IKConfig = {
             jointConfigs: [
 
                 {
-                    boneName: VRMSchema.HumanoidBoneName.Neck,
-                    order: 'XYZ',
-                    rotationMin: new Vector3(- (45 / 180) * Math.PI, - (45 / 180) * Math.PI, - (45 / 180) * Math.PI),
-                    rotationMax: new Vector3((45 / 180) * Math.PI, (45 / 180) * Math.PI, (45 / 180) * Math.PI)
-                },
-                {
                     boneName: VRMSchema.HumanoidBoneName.Chest,
                     order: 'XYZ',
                     rotationMin: new Vector3(-Math.PI, -Math.PI, -Math.PI),
@@ -59,7 +53,7 @@ export const defaultIKConfig: IKConfig = {
                     rotationMax: new Vector3(Math.PI, Math.PI, Math.PI),
                 },
             ],
-            effectorBoneName: VRMSchema.HumanoidBoneName.Head
+            effectorBoneName: VRMSchema.HumanoidBoneName.Neck,
         },
         // Left Shoulder -> Hand
         {
