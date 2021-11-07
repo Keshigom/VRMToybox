@@ -12,10 +12,6 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "@pixiv/three-vrm": "^0.6.2",
-    "three": "^0.125.2"
-  },
   "devDependencies": {
     "html-webpack-plugin": "^5.3.1",
     "ts-loader": "^8.0.17",
@@ -23,5 +19,9 @@
     "webpack": "^5.24.1",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "^0.6.7",
+    "three": "^0.133.1"
   }
 }
